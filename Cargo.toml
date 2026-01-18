@@ -1,0 +1,29 @@
+[package]
+name = "wc-envc"
+version = "0.1.0"
+edition = "2021"
+description = "Encrypt/decrypt .env files securely"
+authors = ["GinCanhViet <gin.canh.viet@gmail.com>"]
+license = "MIT"
+
+[dependencies]
+# CLI argument parsing
+clap = { version = "4.4", features = ["derive", "env"] }
+
+# Encryption (AES-256)
+magic-crypt = "3.1"
+
+# Error handling
+anyhow = "1.0"
+
+# Interactive prompts
+dialoguer = "0.11"
+
+# Colored terminal output
+console = "0.15"
+
+# Base64 validation
+base64 = "0.22"
+
+# Secure password handling (zeroize on drop)
+secrecy = "0.8"
