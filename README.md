@@ -17,6 +17,10 @@ Managing environment variables in a team is often a headache:
 
 **wc-envc solves this.** Encrypt the _values_, keep the _keys_ readable. Commit `.env.enc` to Git. Team pulls, decrypts with shared password, done.
 
+## 📸 Screenshot
+
+![Screenshot](/images/encrypt.jpg)
+
 ## ✨ Features
 
 - 🔒 **AES-256 Encryption** - Industry-standard security
