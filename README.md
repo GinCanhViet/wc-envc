@@ -1,5 +1,5 @@
 # wc-envc (WorkCloud Env Crypt)
-
+[![Release](https://github.com/GinCanhViet/wc-envc/actions/workflows/release.yml/badge.svg)](https://github.com/GinCanhViet/wc-envc/actions/workflows/release.yml)
 [![Rust](https://img.shields.io/badge/built_with-Rust-dca282.svg)](https://www.rust-lang.org/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-cross--platform-lightgrey.svg)]()
