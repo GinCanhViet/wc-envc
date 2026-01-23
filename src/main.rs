@@ -1,6 +1,7 @@
 mod engine;
 mod interactive;
 mod scanner;
+mod setenv;
 
 use std::path::PathBuf;
 use std::process;
@@ -68,6 +69,17 @@ enum Commands {
         #[arg(short, long, default_value = "false")]
         yes: bool,
     },
+    
+    /// Set environment variables from .env file permanently
+    Setenv {
+        /// Input file (optional in interactive mode)
+        #[arg(value_name = "FILE")]
+        file: Option<PathBuf>,
+        
+        /// Skip confirmation prompts
+        #[arg(short, long, default_value = "false")]
+        yes: bool,
+    },
 }
 
 fn main() {
@@ -92,6 +104,9 @@ fn run() -> Result<()> {
         }
         Commands::Decrypt { file, password, input, output, yes } => {
             handle_decrypt(file, password, input, output, yes)
+        }
+        Commands::Setenv { file, yes } => {
+            setenv::handle_setenv(file, yes)
         }
     }
 }

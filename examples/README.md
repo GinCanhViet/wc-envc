@@ -21,6 +21,9 @@ wc-envc encrypt
 
 # Interactive - decrypt
 wc-envc decrypt
+
+# Export to system Environment (New!)
+wc-envc setenv .env.simple
 ```
 
 ## One-liner Mode

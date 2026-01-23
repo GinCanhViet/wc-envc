@@ -1,4 +1,5 @@
 # wc-envc (WorkCloud Env Crypt)
+
 [![Release](https://github.com/GinCanhViet/wc-envc/actions/workflows/release.yml/badge.svg)](https://github.com/GinCanhViet/wc-envc/actions/workflows/release.yml)
 [![Rust](https://img.shields.io/badge/built_with-Rust-dca282.svg)](https://www.rust-lang.org/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
@@ -28,6 +29,7 @@ Managing environment variables in a team is often a headache:
 - 🚀 **Interactive Mode** - Auto-scans for `.env` files, multi-select support
 - 📝 **Auto .gitignore** - Prompts to add source files after encryption
 - 🔐 **Secure Password** - Uses `SecretString` (memory zeroized after use)
+- 🌐 **Permanent System Env** - `setenv` command to export variables to system permanently
 - 🤖 **CI/CD Friendly** - Non-interactive mode + env var support
 - 🦀 **Written in Rust** - Fast, lightweight, cross-platform
 
@@ -70,6 +72,18 @@ cargo install --path .
 wc-envc encrypt    # Encrypt .env files
 wc-envc decrypt    # Decrypt .env.enc files
 ```
+
+### Permanent System Environment
+
+Export variables from a `.env` file to your system permanently:
+
+```bash
+wc-envc setenv                # Interactive mode
+wc-envc setenv .env.staging   # Direct file mode
+```
+
+- **Windows**: Adds to User Environment Variables (via Registry/setx).
+- **Unix**: Appends to `~/.bashrc` or `~/.zshrc`.
 
 **What happens:**
 
